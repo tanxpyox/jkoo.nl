@@ -1,4 +1,0 @@
-<VirtualHost *:80>
-ServerName notion.so
-Redirect / https://www.notion.so/nlkoo/04d79807987845e0bed60b83c264b986?v=79503aa834c14ea58f4cc77c7925d293
-</VirtualHost>
