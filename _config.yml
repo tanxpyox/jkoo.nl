@@ -8,8 +8,8 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : #""
-title_separator          : #" · "
+title                    : "John Koo"
+title_separator          : " · "
 name                     : &name "John Koo"
 description              : #&description "PhD Student in Government"
 url                      : https://jkoo.nl # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
