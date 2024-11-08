@@ -24,8 +24,8 @@ author:
   avatar           : "profile.jpg"
   name             : "John NL Koo"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student in Government, Harvard University"
-  location         : # "Earth"
+  bio              : "PhD Student in Government<br>Harvard University"
+  location         : # "Cambridge, MA"
   employer         : # "Red Brick University"
   uri              : # URL
   email            : "johnkoo@fas.harvard.edu" 
