@@ -234,6 +234,12 @@ $media-size-tablet: "(max-width: 900px)";
     color: #000;
   }
 
+  &__subtext{
+    font-size: 1.125rem;
+    white-space: nowrap;
+    color: #A5A5A5;
+  }
+
   &__cursor {
     display: inline-block;
     width: 10px;
