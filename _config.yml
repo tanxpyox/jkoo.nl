@@ -303,6 +303,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-external-links
   - jemoji
 
 # Mimic GitHub Pages with --safe
@@ -311,6 +312,8 @@ whitelist:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-external-links
   - jemoji
 
 
@@ -349,3 +352,11 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# external_links:
+#   selector: 'main a'
+#   ignored_selectors:
+#     - a[href*=travis]
+#     - a[href*=coverity]
+#     - a[href*=codecov]
+#   marker_html: "<span class='ico-ext'><i class='fa-solid fa-arrow-up-right-from-square'></i></span>"
