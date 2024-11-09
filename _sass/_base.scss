@@ -319,7 +319,7 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
 details {
   display: inline-flex;
   border-radius: 4px;
-  padding: 0.125em 0.25em;
+  padding: 0;
   font-size: .9em;
   text-justify: inter-word;
 }
@@ -327,7 +327,8 @@ details {
 summary {
   display: inline-block;
   margin-bottom: 0.25em;
-  padding: 0;
+  padding: 0.125em 0.25em;
+  font-size: .9em;
   color: $link-color;
   text-align: center;
   text-decoration: none !important;
