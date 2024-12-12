@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem "jekyll-external-links"
   gem 'jemoji'
+  gem 'jekyll-target-blank'
   gem 'webrick', '~> 1.8'
 end
 

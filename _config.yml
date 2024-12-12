@@ -304,6 +304,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-external-links
+  - jekyll-target-blank
   - jemoji
 
 # Mimic GitHub Pages with --safe
@@ -314,6 +315,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-external-links
+  - jekyll-target-blank
   - jemoji
 
 
