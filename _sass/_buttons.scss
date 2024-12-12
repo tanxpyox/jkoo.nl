@@ -170,3 +170,43 @@
     }
   }
 }
+
+// Zotero buttons
+
+.zotero_btn {
+	background-color:#fcfcfc;
+  border-radius: $border-radius;
+	border:1px solid #db2c3a;
+	display:inline-block;
+	cursor:pointer;
+  margin-bottom: 0.25em;
+  padding: 0.125em 0.25em;
+	color:#db2c3a;
+  text-align: center;
+  text-decoration: none !important;
+  font-size: 0.9em;
+  line-height: 28px;
+}
+.zotero_btn:hover {
+  color: #fff;
+	background-color:#db2c3a;
+}
+
+.normal_btn {
+	background-color:#fcfcfc;
+  border-radius: $border-radius;
+	border:1px solid $link-color;
+	display:inline-block;
+	cursor:pointer;
+  margin-bottom: 0.25em;
+  padding: 0.125em 0.25em;
+	color:$link-color;
+  text-align: center;
+  text-decoration: none !important;
+  font-size: 0.9em;
+  line-height: 28px;
+}
+.normal_btn:hover {
+  color: #fff;
+	background-color:$link-color;
+}

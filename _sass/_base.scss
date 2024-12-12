@@ -336,6 +336,7 @@ summary {
   border-color: $link-color;
   border-radius: $border-radius;
   cursor: pointer;
+  line-height: 28px;
 
   &:hover {
     color: #fff;
@@ -349,10 +350,15 @@ details[open] {
   border-color: $link-color;
   border-radius: $border-radius;
   line-height: 1.5;
+  margin-bottom: 4px;
 }
 
 details[open] summary {
   border: 0px solid;
   margin-bottom: 0.25em;
   font-weight: bold;
+}
+
+span.line {
+  display: inline-block;
 }
