@@ -26,6 +26,8 @@ redirect_from:
 
 <a href="https://academic.oup.com/isq/article-abstract/68/4/sqae148/7918196" target="_blank" rel="noopener noreferrer" class = "normal_btn">Publisher's Version</a>
 
+<a href="/assets/mss/wwd.pdf" target="_blank" rel="noopener noreferrer" class = "normal_btn">Ungated Version</a>
+
 <a href="https://www.zotero.org/save?type=doi&q=10.1093/isq/sqae148" target="_blank" rel="noopener noreferrer" class="zotero_btn">Add to Zotero</a>
 
 </p>
