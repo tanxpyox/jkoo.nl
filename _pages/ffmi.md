@@ -148,8 +148,8 @@ redirect_from:
   <input type="number" min="0" max="100" id="bodyfat" placeholder="e.g. 15" value="15">
 </div>
 <div class="form-group">
-  <label for="gender">Gender</label>
-  <select id="gender">
+  <label for="sex">Sex</label>
+  <select id="sex">
     <option value="male" selected>Male</option>
     <option value="female">Female</option>
   </select>
@@ -194,9 +194,9 @@ redirect_from:
     const bar = document.getElementById('bmiBar');
     const label = document.getElementById('bmiLabel');
     let category = '', color = '', percent;
-    const gender = document.getElementById('gender').value;
+    const sex = document.getElementById('sex').value;
 
-    if (gender === 'male') {
+    if (sex === 'male') {
       percent = Math.min(100, ((normFFMI - 15) / 15) * 100);
       if (normFFMI < 18) {
         category = 'Below Average🥀'; color = '#00bcd4';

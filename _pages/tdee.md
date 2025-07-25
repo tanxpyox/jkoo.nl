@@ -151,8 +151,8 @@ redirect_from:
     <input type="number" id="age" min="10" max="100" placeholder="e.g. 30">
   </div>
   <div class="form-group" style="flex: 1;">
-    <label for="gender">Gender</label>
-    <select id="gender">
+    <label for="sex">Sex</label>
+    <select id="sex">
       <option value="male" selected>Male</option>
       <option value="female">Female</option>
     </select>
@@ -177,7 +177,7 @@ redirect_from:
       </select>
     </div>
     <div class="output">
-      Recommended Intake: <span id="tdee">0</span> calories/day
+      Rec. intake: <span id="tdee">0</span> kcal/day
     </div>
     <div class="output">
       <abbr title="Body Mass Index">BMI</abbr>: <span id="bmi">0</span>
@@ -203,7 +203,7 @@ redirect_from:
       let height = parseFloat(document.getElementById('height').value);
       if (isImperial) height = height * 2.54;
       const age = parseInt(document.getElementById('age').value);
-      const gender = document.getElementById('gender').value;
+      const sex = document.getElementById('sex').value;
       const activity = parseFloat(document.getElementById('activity').value);
       const goal = parseInt(document.getElementById('goal').value);
 
@@ -214,7 +214,7 @@ redirect_from:
       }
 
       let bmr;
-      if (gender === 'male') {
+      if (sex === 'male') {
         bmr = 10 * weight + 6.25 * height - 5 * age + 5;
       } else {
         bmr = 10 * weight + 6.25 * height - 5 * age - 161;
