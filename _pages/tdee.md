@@ -1,6 +1,6 @@
 ---
 permalink: /tdee
-title: "Daily Calories Calculator"
+title: "Calorie Calculator"
 layout: default
 sidebar: false
 author_profile: false
@@ -25,13 +25,17 @@ redirect_from:
       margin: 0;
     }
     .container {
-      margin-top: 30px;
       background: white;
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       max-width: 600px;
       width: 100%;
+    }
+    @media all and (min-width: 600px) {
+      .container {
+      margin-top: 30px;
+      }
     }
     h1 {
       text-align: center;
