@@ -1,9 +1,10 @@
 ---
 permalink: /1rm
+layout: default
+sidebar: false
+author_profile: false
 ---
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,11 +57,9 @@ permalink: /1rm
       outline: none;
       transition: background 0.2s;
     }
-
     input[type="range"]:hover {
       background: #ccc;
     }
-
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -71,12 +70,10 @@ permalink: /1rm
       cursor: pointer;
       transition: transform 0.2s ease, background 0.2s ease;
     }
-
     input[type="range"]:active::-webkit-slider-thumb {
       transform: scale(1.3);
       background: #374151;
     }
-
     input[type="range"]::-moz-range-thumb {
       width: 14px;
       height: 14px;
@@ -85,39 +82,34 @@ permalink: /1rm
       cursor: pointer;
       transition: transform 0.2s ease, background 0.2s ease;
     }
-
     input[type="range"]:active::-moz-range-thumb {
       transform: scale(1.3);
       background: #374151;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="title">1RM Estimator</div>
-
     <div class="slider-group">
       <label for="weight" class="label">Weight Lifted: <span id="weightVal">100</span></label>
       <input type="range" id="weight" min="20" max="300" value="100" />
     </div>
-
     <div class="slider-group">
       <label for="reps" class="label">Repetitions: <span id="repsVal">5</span></label>
       <input type="range" id="reps" min="1" max="15" value="5" />
     </div>
-
     <div class="output">
       Estimated 1RM: <span id="output">117</span>
     </div>
   </div>
-    
-<script>
+  <script>
     const weightSlider = document.getElementById('weight');
     const repsSlider = document.getElementById('reps');
     const weightVal = document.getElementById('weightVal');
     const repsVal = document.getElementById('repsVal');
     const output = document.getElementById('output');
-
     function updateEstimate() {
       const w = parseInt(weightSlider.value);
       const r = parseInt(repsSlider.value);
@@ -126,7 +118,6 @@ permalink: /1rm
       repsVal.textContent = r;
       output.textContent = estimated1RM;
     }
-
     weightSlider.addEventListener('input', updateEstimate);
     repsSlider.addEventListener('input', updateEstimate);
   </script>
@@ -134,4 +125,3 @@ permalink: /1rm
     Estimate calculated using the Epley formula: 1RM = weight × (1 + reps / 30)
   </footer>
 </body>
-</html>
