@@ -280,7 +280,6 @@ author_profile: false
         return { score, grade };
       });
       const labels = getGradeLabels();
-      gradeMap.sort((a, b) => labels.indexOf(b.grade) - labels.indexOf(a.grade));
       gradeMap.forEach(({ score, grade }) => {
         csvContent += `${score},${grade}\n`;
       });
