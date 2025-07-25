@@ -1,17 +1,21 @@
 {% include base_path %}
+{% assign url_parts = page.url | split: '/' %}
+{% assign clean_parts = url_parts | reject: '' %}
+{% assign part_count = clean_parts | size | minus: 1 %}
+{% assign parent_parts = clean_parts | slice: 0, part_count %}
+{% assign parent_path = parent_parts | join: '/' %}
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
   <span class="header__inner">
     <li class="masthead__menu-item masthead__menu-item--lg" style="text-decoration: none;">
-      <a href="{{ base_path }}/">
+      
         <div class="xlogo">
           <span class="xlogo__mark">&gt;</span>
-          <span class="xlogo__text">jkoo.nl</span>
-          <span class="xlogo__subtext">{{page.url}}</span>
+          <a href="{{ base_path }}/"><span class="xlogo__text">jkoo.nl</span></a>
+          <a href="{{ parent_path }}"><span class="xlogo__subtext">{{page.url}}</span></a>
           <span class="xlogo__cursor"></span>
         </div>
-      </a>
     </li>
       <span class="header__right">
           <nav class="menu">

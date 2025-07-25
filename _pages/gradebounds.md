@@ -1,6 +1,6 @@
 ---
-permalink: /gradebounds
-title: "Grade Boundary Finder"
+permalink: /tools/gradebounds
+title: "Grade Boundary Calculator"
 layout: default
 sidebar: false
 author_profile: false
@@ -14,15 +14,26 @@ author_profile: false
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <style>
     body {
-      margin: auto;
-      padding: 2rem;
-      background: #fdfdfd;
-      color: #222;
+      font-family: sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
     }
     .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       max-width: 700px;
-      margin: auto;
-      margin-top: 48px;
+      width: 100%;
+    }   
+    @media all and (min-width: 700px) {
+      .container {
+      margin-top: 30px;
+      }
     }
     h1, h2 {
       font-weight: 500;

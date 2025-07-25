@@ -1,11 +1,9 @@
 ---
-permalink: /1rm
-title: "1-Rep Max Calculator"
+permalink: /tools/1rm
+title: "One-Rep Max Calculator"
 layout: default
 sidebar: false
 author_profile: false
-redirect_from:
-  - /1RM
 ---
 
 <head>
@@ -95,7 +93,7 @@ redirect_from:
 
 <body>
   <div class="container">
-    <div class="title">1RM Estimator</div>
+    <div class="title">One-Rep Max Calculator</div>
     <div class="slider-group">
       <label for="weight" class="label">Weight Lifted: <span id="weightVal">100</span></label>
       <input type="range" id="weight" min="20" max="300" value="100" />
@@ -125,7 +123,4 @@ redirect_from:
     weightSlider.addEventListener('input', updateEstimate);
     repsSlider.addEventListener('input', updateEstimate);
   </script>
-  <footer style="position: absolute; bottom: 1rem; width: 100%; text-align: center; color: #6b7280; font-size: 0.75rem;">
-    Estimate calculated using the Epley formula: 1RM = weight × (1 + reps / 30)
-  </footer>
 </body>
