@@ -129,7 +129,7 @@ redirect_from:
 <body>
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-      <h1 style="margin: 0;">TDEE Calculator</h1>
+      <h1 style="margin: 0;">Calorie Calculator</h1>
       <label class="switch">
         <input type="checkbox" id="unitToggle">
         <span class="slider round"></span>
@@ -177,7 +177,7 @@ redirect_from:
       </select>
     </div>
     <div class="output">
-      <abbr title="Total Daily Energy Expenditure">TDEE</abbr>: <span id="tdee">0</span> calories/day
+      Recommended Intake: <span id="tdee">0</span> calories/day
     </div>
     <div class="output">
       <abbr title="Body Mass Index">BMI</abbr>: <span id="bmi">0</span>
