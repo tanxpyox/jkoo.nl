@@ -22,6 +22,7 @@ author_profile: false
     .container {
       max-width: 700px;
       margin: auto;
+      margin-top: 48px;
     }
     h1, h2 {
       font-weight: 500;
