@@ -6,12 +6,11 @@ sidebar: false
 author_profile: false
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grade Boundary Visualizer</title>
+  <title>Grade Boundary Finder</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <style>
     body {
@@ -67,7 +66,7 @@ author_profile: false
   </style>
 </head>
 <body>
-  <h1>Grade Boundary Assignment Tool</h1>
+  <h1>Grade Boundary Calculator</h1>
   <p>Enter student scores (comma or space separated):</p>
   <input type="text" id="scoreInput" placeholder="e.g. 45, 56, 78, 89" size="40" />
   <button onclick="parseScores()">Plot Scores</button>
@@ -79,12 +78,20 @@ author_profile: false
     <button onclick="applyPercentBoundaries()">Set Boundaries</button>
   </div>
 
+  <div class="percentages">
+    <h2>Custom Grade Labels (Optional)</h2>
+    <p>Enter labels (e.g. A, B, C, D):</p>
+    <input type="text" id="gradeLabels" placeholder="e.g. A, B, C, D" size="40" />
+  </div>
+
   <div id="plot" style="margin-top: 2rem;"></div>
 
   <div class="boundary-control">
     <h2>Adjust Boundaries</h2>
     <div id="sliders"></div>
     <button onclick="addBoundary()">Add Boundary</button>
+    <button onclick="exportBoundaries()">Export Grade Bands</button>
+    <button onclick="exportGradesPerStudent()">Export Student Grades</button>
   </div>
 
   <div class="grade-bands">
@@ -96,9 +103,15 @@ author_profile: false
     let scores = [];
     let boundaries = [50];
 
+    function getGradeLabels() {
+      const input = document.getElementById("gradeLabels").value;
+      const labels = input.split(/[,\s]+/).filter(l => l);
+      return labels.length > 0 ? labels : ["A", "B", "C", "D", "E", "F"];
+    }
+
     function parseScores() {
       const input = document.getElementById("scoreInput").value;
-      scores = input.split(/[\s,]+/).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+      scores = input.split(/[\s,]+/).map(Number).filter(n => !isNaN(n)).sort((a, b) => b - a);
       if (scores.length > 0) {
         drawPlot();
         renderSliders();
@@ -114,7 +127,6 @@ author_profile: false
         alert("Percentages must add up to 100.");
         return;
       }
-
       let cumulative = 0;
       boundaries = [];
       for (let i = 0; i < percentages.length - 1; i++) {
@@ -122,7 +134,7 @@ author_profile: false
         const index = Math.floor((cumulative / 100) * scores.length);
         boundaries.push(scores[Math.min(index, scores.length - 1)]);
       }
-
+      boundaries.sort((a, b) => a - b);
       drawPlot();
       renderSliders();
       renderBands();
@@ -158,10 +170,8 @@ author_profile: false
       boundaries.forEach((b, i) => {
         const container = document.createElement("div");
         container.className = "slider-container";
-
         const label = document.createElement("span");
         label.innerText = `Boundary ${i + 1}:`;
-
         const input = document.createElement("input");
         input.type = "range";
         input.min = Math.min(...scores);
@@ -169,11 +179,9 @@ author_profile: false
         input.step = 1;
         input.value = b;
         input.oninput = (e) => updateBoundary(i, +e.target.value);
-
         const remove = document.createElement("button");
         remove.innerText = "Remove";
         remove.onclick = () => removeBoundary(i);
-
         container.appendChild(label);
         container.appendChild(input);
         container.appendChild(remove);
@@ -204,6 +212,13 @@ author_profile: false
       renderBands();
     }
 
+    function getGradeLetter(index, totalBands) {
+      const labels = getGradeLabels();
+      const reversedLabels = [...labels].slice(0, totalBands).reverse();
+      return reversedLabels[index] || `G${index}`;
+    }
+
+
     function renderBands() {
       const sorted = [...boundaries].sort((a, b) => a - b);
       const edges = [0, ...sorted, 100];
@@ -215,10 +230,61 @@ author_profile: false
         const max = edges[i + 1];
         const count = scores.filter(s => s >= min && s < max).length;
         const percent = ((count / total) * 100).toFixed(1);
+        const grade = getGradeLetter(i, edges.length - 1);
         const li = document.createElement("li");
-        li.innerText = `${min}-${max}: ${count} students (${percent}%)`;
+        li.innerText = `${grade}: ${min}-${max} | ${count} students (${percent}%)`;
         ul.appendChild(li);
       }
+    }
+
+    function exportBoundaries() {
+      const sorted = [...boundaries].sort((a, b) => a - b);
+      const edges = [0, ...sorted, 100];
+      let csvContent = "data:text/csv;charset=utf-8,Grade,Min,Max,Student Count,Percentage\n";
+      const total = scores.length;
+      for (let i = 0; i < edges.length - 1; i++) {
+        const min = edges[i];
+        const max = edges[i + 1];
+        const count = scores.filter(s => s >= min && s < max).length;
+        const percent = ((count / total) * 100).toFixed(1);
+        const grade = getGradeLetter(i);
+        csvContent += `${grade},${min}, ${max},${count},${percent}%\n`;
+      }
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "grade_boundaries.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function exportGradesPerStudent() {
+      const sorted = [...boundaries].sort((a, b) => a - b);
+      const edges = [0, ...sorted, 100];
+      let csvContent = "data:text/csv;charset=utf-8,Student Score,Grade\n";
+      const gradeMap = scores.map(score => {
+        let grade = "?";
+        for (let i = 0; i < edges.length - 1; i++) {
+          if (score >= edges[i] && score < edges[i + 1]) {
+            grade = getGradeLetter(i, edges.length - 1);
+            break;
+          }
+        }
+        return { score, grade };
+      });
+      const labels = getGradeLabels();
+      gradeMap.sort((a, b) => labels.indexOf(b.grade) - labels.indexOf(a.grade));
+      gradeMap.forEach(({ score, grade }) => {
+        csvContent += `${score},${grade}\n`;
+      });
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "student_grades.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
 </body>
