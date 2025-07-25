@@ -6,6 +6,7 @@ sidebar: false
 author_profile: false
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +15,6 @@ author_profile: false
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       max-width: 700px;
       margin: auto;
       padding: 2rem;
@@ -61,6 +61,9 @@ author_profile: false
     li {
       margin-bottom: 0.25rem;
     }
+    .percentages {
+      margin-top: 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -68,6 +71,14 @@ author_profile: false
   <p>Enter student scores (comma or space separated):</p>
   <input type="text" id="scoreInput" placeholder="e.g. 45, 56, 78, 89" size="40" />
   <button onclick="parseScores()">Plot Scores</button>
+
+  <div class="percentages">
+    <h2>Assign Boundaries by Percentages (Optional)</h2>
+    <p>Enter percentages (e.g. 20, 30, 25, 25):</p>
+    <input type="text" id="percentInput" placeholder="e.g. 20, 30, 25, 25" size="40" />
+    <button onclick="applyPercentBoundaries()">Set Boundaries</button>
+  </div>
+
   <div id="plot" style="margin-top: 2rem;"></div>
 
   <div class="boundary-control">
@@ -93,6 +104,28 @@ author_profile: false
         renderSliders();
         renderBands();
       }
+    }
+
+    function applyPercentBoundaries() {
+      const input = document.getElementById("percentInput").value;
+      const percentages = input.split(/[\s,]+/).map(Number).filter(p => !isNaN(p) && p > 0);
+      const totalPercent = percentages.reduce((a, b) => a + b, 0);
+      if (scores.length === 0 || totalPercent !== 100) {
+        alert("Percentages must add up to 100.");
+        return;
+      }
+
+      let cumulative = 0;
+      boundaries = [];
+      for (let i = 0; i < percentages.length - 1; i++) {
+        cumulative += percentages[i];
+        const index = Math.floor((cumulative / 100) * scores.length);
+        boundaries.push(scores[Math.min(index, scores.length - 1)]);
+      }
+
+      drawPlot();
+      renderSliders();
+      renderBands();
     }
 
     function drawPlot() {
