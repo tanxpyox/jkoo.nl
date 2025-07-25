@@ -158,7 +158,7 @@ author_profile: false
     </div>
 </div>
 
-  <script>
+  <script data-cfasync="false">
   const inputs = document.querySelectorAll('input, select');
   function calculateFFMI() {
     const isImperial = document.getElementById('unitToggle').checked;
@@ -190,35 +190,35 @@ author_profile: false
 
     if (gender === 'male') {
       if (normFFMI < 18) {
-        category = 'Below Average'; color = '#00bcd4';
+        category = 'Below Average🥀'; color = '#00bcd4';
       } else if (normFFMI < 20) {
-        category = 'Average'; color = '#4caf50';
+        category = 'Average🧍‍♂️'; color = '#4caf50';
       } else if (normFFMI < 22) {
-        category = 'Above Average'; color = '#ff9800';
+        category = 'Above Average🏋️‍♂️'; color = '#ff9800';
       } else if (normFFMI < 23) {
-        category = 'Excellent'; color = '#fbc02d';
+        category = 'Excellent⭐'; color = '#fbc02d';
       } else if (normFFMI < 26) {
-        category = 'Superior'; color = '#ff5722';
+        category = 'Superior💪'; color = '#ff5722';
       } else if (normFFMI < 28) {
-        category = 'Suspicion of steroid use'; color = '#e91e63';
+        category = 'Suspicion of steroid use🚨'; color = '#e91e63';
       } else {
-        category = 'Steroid usage likely'; color = '#9c27b0';
+        category = 'Steroid usage likely💉'; color = '#9c27b0';
       }
     } else {
       if (normFFMI < 15) {
-        category = 'Below Average'; color = '#00bcd4';
+        category = 'Below Average🥀'; color = '#00bcd4';
       } else if (normFFMI < 17) {
-        category = 'Average'; color = '#4caf50';
+        category = 'Average🧍‍♀️'; color = '#4caf50';
       } else if (normFFMI < 18) {
-        category = 'Above Average'; color = '#ff9800';
+        category = 'Above Average🏋️‍♀️'; color = '#ff9800';
       } else if (normFFMI < 19) {
-        category = 'Excellent'; color = '#fbc02d';
+        category = 'Excellent⭐'; color = '#fbc02d';
       } else if (normFFMI < 21.5) {
-        category = 'Superior'; color = '#ff5722';
+        category = 'Superior💪'; color = '#ff5722';
       } else if (normFFMI < 25) {
-        category = 'Suspicion of steroid use'; color = '#e91e63';
+        category = 'Suspicion of steroid use🚨'; color = '#e91e63';
       } else {
-        category = 'Steroid usage likely'; color = '#9c27b0';
+        category = 'Steroid usage likely💉'; color = '#9c27b0';
       }
     }
     label.textContent = category;
