@@ -13,7 +13,7 @@ Here are some tools I've developed over the years to make my life easier. Most o
 
 ## Language Tools
 
-[Rime Cantonese](https://github.com/rime/rime-cantonese): The only open-source Cantonese input method. Works on all major (and minor) operating systems - yes, even your favourite obscure Linux distro.
+[Rime Cantonese](https://github.com/rime/rime-cantonese){:target="_blank"}: The only open-source Cantonese input method. Works on all major (and minor) operating systems - yes, even your favourite obscure Linux distro.
 
 ## Health-related stuff
 
