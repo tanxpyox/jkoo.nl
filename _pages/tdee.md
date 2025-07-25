@@ -128,11 +128,11 @@ author_profile: false
     <div style="display: flex; gap: 1rem;">
   <div class="form-group" style="flex: 1;">
     <label for="weight">Weight (kg)</label>
-    <input type="number" id="weight" placeholder="e.g. 70" value="70">
+    <input type="number" min="0" id="weight" placeholder="e.g. 70" value="70">
   </div>
   <div class="form-group" style="flex: 1;">
     <label for="height">Height (cm)</label>
-    <input type="number" id="height" placeholder="e.g. 175" value="175">
+    <input type="number" min="0" id="height" placeholder="e.g. 175" value="175">
   </div>
 </div>
     <div style="display: flex; gap: 1rem;">
