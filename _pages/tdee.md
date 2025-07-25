@@ -24,7 +24,7 @@ author_profile: false
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      max-width: 420px;
+      max-width: 600px;
       width: 100%;
     }
     h1 {
@@ -96,7 +96,7 @@ author_profile: false
       color: white;
       font-size: 0.7rem;
       position: absolute;
-      width: 83%;
+      width: 100%;
       height: 100%;
       top: 0;
       left: 0;
@@ -110,7 +110,7 @@ author_profile: false
     input:checked + .slider.round::after {
       content: 'Imperial';
       justify-content: flex-start;
-      padding-left: 15%;
+      padding-left: 12%;
       padding-right: 0;
     }
   </style>
@@ -125,25 +125,29 @@ author_profile: false
         <span class="slider round"></span>
       </label>
     </div>
-    <div class="form-group">
-      <label for="weight">Weight (kg)</label>
-      <input type="number" id="weight" placeholder="e.g. 70" value="70">
-    </div>
-    <div class="form-group">
-      <label for="height">Height (cm)</label>
-      <input type="number" id="height" placeholder="e.g. 175" value="175">
-    </div>
-    <div class="form-group">
-      <label for="age">Age</label>
-      <input type="number" id="age" min="10" max="100" placeholder="e.g. 30">
-    </div>
-    <div class="form-group">
-      <label for="gender">Gender</label>
-      <select id="gender">
-        <option value="male" selected>Male</option>
-        <option value="female">Female</option>
-      </select>
-    </div>
+    <div style="display: flex; gap: 1rem;">
+  <div class="form-group" style="flex: 1;">
+    <label for="weight">Weight (kg)</label>
+    <input type="number" id="weight" placeholder="e.g. 70" value="70">
+  </div>
+  <div class="form-group" style="flex: 1;">
+    <label for="height">Height (cm)</label>
+    <input type="number" id="height" placeholder="e.g. 175" value="175">
+  </div>
+</div>
+    <div style="display: flex; gap: 1rem;">
+  <div class="form-group" style="flex: 1;">
+    <label for="age">Age</label>
+    <input type="number" id="age" min="10" max="100" placeholder="e.g. 30">
+  </div>
+  <div class="form-group" style="flex: 1;">
+    <label for="gender">Gender</label>
+    <select id="gender">
+      <option value="male" selected>Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+</div>
     <div class="form-group">
       <label for="activity">Activity Level</label>
       <select id="activity">
