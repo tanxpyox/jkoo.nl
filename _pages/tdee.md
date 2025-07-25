@@ -1,5 +1,6 @@
 ---
 permalink: /tdee
+title: "Daily Calories Calculator"
 layout: default
 sidebar: false
 author_profile: false
@@ -20,6 +21,7 @@ author_profile: false
       margin: 0;
     }
     .container {
+      margin-top: 30px;
       background: white;
       padding: 2rem;
       border-radius: 1rem;
@@ -167,10 +169,10 @@ author_profile: false
       </select>
     </div>
     <div class="output">
-      TDEE: <span id="tdee">0</span> calories/day
+      <abbr title="Total Daily Energy Expenditure">TDEE</abbr>: <span id="tdee">0</span> calories/day
     </div>
     <div class="output">
-      BMI: <span id="bmi">0</span>
+      <abbr title="Body Mass Index">BMI</abbr>: <span id="bmi">0</span>
     </div>
     <div id="bmiLabel" style="margin-top: 0.25rem; font-size: 0.9rem; color: #555;"></div>
     <div style="position: relative; height: 8px; background: #eee; border-radius: 4px; margin-top: 0.25rem;">

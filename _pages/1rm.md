@@ -1,5 +1,6 @@
 ---
 permalink: /1rm
+title: "1-Rep Max Calculator"
 layout: default
 sidebar: false
 author_profile: false
@@ -21,6 +22,7 @@ author_profile: false
       margin: 0;
     }
     .container {
+      margin-top: 30px;
       background: white;
       padding: 2rem;
       border-radius: 1rem;

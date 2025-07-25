@@ -1,5 +1,6 @@
 ---
 permalink: /ffmi
+title: "FFMI Calculator"
 layout: default
 sidebar: false
 author_profile: false
@@ -20,6 +21,7 @@ author_profile: false
       margin: 0;
     }
     .container {
+      margin-top: 30px;
       background: white;
       padding: 2rem;
       border-radius: 1rem;
@@ -147,7 +149,7 @@ author_profile: false
   </select>
 </div>
     <div class="output">
-      FFMI: <span id="ffmi">—</span>
+      <abbr title="Fat-Free Mass Index">FFMI</abbr>: <span id="ffmi">—</span>
     </div>
     <div class="output">
       Normalized FFMI: <span id="normffmi">—</span>
@@ -185,10 +187,11 @@ author_profile: false
 
     const bar = document.getElementById('bmiBar');
     const label = document.getElementById('bmiLabel');
-    let category = '', color = '', percent = Math.min(100, ((normFFMI - 15) / 15) * 100);
+    let category = '', color = '', percent;
     const gender = document.getElementById('gender').value;
 
     if (gender === 'male') {
+      percent = Math.min(100, ((normFFMI - 15) / 15) * 100);
       if (normFFMI < 18) {
         category = 'Below Average🥀'; color = '#00bcd4';
       } else if (normFFMI < 20) {
@@ -205,6 +208,7 @@ author_profile: false
         category = 'Steroid usage likely💉'; color = '#9c27b0';
       }
     } else {
+      percent = Math.min(100, ((normFFMI - 12) / 15) * 100);
       if (normFFMI < 15) {
         category = 'Below Average🥀'; color = '#00bcd4';
       } else if (normFFMI < 17) {
