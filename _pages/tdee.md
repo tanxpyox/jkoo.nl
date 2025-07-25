@@ -181,7 +181,7 @@ author_profile: false
     </div>
   </div>
 
-  <script data-cfasync="false">
+  <script>
     const inputs = document.querySelectorAll('input, select');
     const output = document.getElementById('tdee');
     const bmiOutput = document.getElementById('bmi');
