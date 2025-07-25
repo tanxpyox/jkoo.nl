@@ -14,11 +14,14 @@ author_profile: false
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <style>
     body {
-      max-width: 700px;
       margin: auto;
       padding: 2rem;
       background: #fdfdfd;
       color: #222;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
     }
     h1, h2 {
       font-weight: 500;
@@ -66,6 +69,7 @@ author_profile: false
   </style>
 </head>
 <body>
+  <div class="container" display = "block">
   <h1>Grade Boundary Calculator</h1>
   <p>Enter student scores (comma or space separated):</p>
   <input type="text" id="scoreInput" placeholder="e.g. 45, 56, 78, 89" size="40" />
@@ -99,6 +103,7 @@ author_profile: false
     <ul id="bands"></ul>
   </div>
 
+  </div>
   <script>
     let scores = [];
     let boundaries = [50];
