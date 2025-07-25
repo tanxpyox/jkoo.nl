@@ -244,7 +244,6 @@ author_profile: false
         const heightInput = document.getElementById('height');
 
         if (isImperial) {
-          // Convert metric to imperial
           const weightInLbs = (parseFloat(weightInput.value) * 2.20462).toFixed(1);
           const heightInInches = (parseFloat(heightInput.value) / 2.54).toFixed(1);
           weightInput.value = weightInLbs;
@@ -254,7 +253,6 @@ author_profile: false
           document.querySelector('label[for="weight"]').textContent = 'Weight (lb)';
           document.querySelector('label[for="height"]').textContent = 'Height (in)';
         } else {
-          // Convert imperial to metric
           const weightInKg = (parseFloat(weightInput.value) / 2.20462).toFixed(1);
           const heightInCm = (parseFloat(heightInput.value) * 2.54).toFixed(1);
           weightInput.value = weightInKg;
