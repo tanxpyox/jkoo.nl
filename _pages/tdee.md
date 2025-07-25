@@ -4,6 +4,10 @@ title: "Daily Calories Calculator"
 layout: default
 sidebar: false
 author_profile: false
+redirect_from:
+  - /TDEE
+  - /calories
+  - /cal
 ---
 
 <head>

@@ -4,6 +4,8 @@ title: "FFMI Calculator"
 layout: default
 sidebar: false
 author_profile: false
+redirect_from:
+  - /FFMI
 ---
 
 <head>

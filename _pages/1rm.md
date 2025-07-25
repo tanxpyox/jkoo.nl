@@ -4,6 +4,8 @@ title: "1-Rep Max Calculator"
 layout: default
 sidebar: false
 author_profile: false
+redirect_from:
+  - /1RM
 ---
 
 <head>
