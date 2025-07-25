@@ -185,6 +185,7 @@ author_profile: false
         input.step = 1;
         input.value = b;
         input.oninput = (e) => updateBoundary(i, +e.target.value);
+        input.onchange = () => renderSliders();
         const remove = document.createElement("button");
         remove.innerText = "Remove";
         remove.onclick = () => removeBoundary(i);
@@ -195,11 +196,27 @@ author_profile: false
       });
     }
 
-    function updateBoundary(index, value) {
+    function updateBoundary(index, value, commit = false) {
+      // Update current
       boundaries[index] = value;
-      boundaries.sort((a, b) => a - b);
+      // Enforce order: if current > next, push next; if current < previous, pull previous
+      for (let i = index + 1; i < boundaries.length; i++) {
+        if (boundaries[i] <= boundaries[i - 1]) {
+          boundaries[i] = boundaries[i - 1] + 1;
+        } else {
+          break;
+        }
+      }
+      for (let i = index - 1; i >= 0; i--) {
+        if (boundaries[i] >= boundaries[i + 1]) {
+          boundaries[i] = boundaries[i + 1] - 1;
+        } else {
+          break;
+        }
+      }
       drawPlot();
       renderBands();
+      if (commit) renderSliders();
     }
 
     function addBoundary() {
