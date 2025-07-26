@@ -1,5 +1,5 @@
 ---
-permalink: /ffmi
+permalink: /tools/ffmi
 title: "FFMI Calculator"
 layout: default
 sidebar: false
