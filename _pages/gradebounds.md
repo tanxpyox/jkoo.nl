@@ -132,7 +132,7 @@ author_profile: false
 
     function getGradeLabels() {
       const input = document.getElementById("gradeLabels").value;
-      const labels = input.split(/[,\s]+/).filter(l => l);
+      const labels = input.split(/[,\s]+/).filter((l) => l);
       return labels.length > 0 ? labels : ["A", "B", "C", "D", "E", "F"];
     }
 
