@@ -219,9 +219,7 @@ author_profile: false
     }
 
     function updateBoundary(index, value, commit = false) {
-      // Update current
       boundaries[index] = value;
-      // Enforce order: if current > next, push next; if current < previous, pull previous
       for (let i = index + 1; i < boundaries.length; i++) {
         if (boundaries[i] <= boundaries[i - 1]) {
           boundaries[i] = boundaries[i - 1] + 1;
