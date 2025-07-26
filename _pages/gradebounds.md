@@ -85,14 +85,14 @@ author_profile: false
   <h1>Grade Boundary Calculator</h1>
   <p>Enter student scores (comma or space separated):</p>
   <input type="text" id="scoreInput" placeholder="e.g. 45, 56, 78, 89" size="40" value = "27.9, 37.2, 38.4, 40.7, 41.2, 42.9, 44.7, 45.0, 45.0, 46.3, 46.4, 46.5, 46.7, 47.0, 47.1, 47.3, 47.7, 48.5, 48.6, 48.6, 49.0, 51.3, 51.5, 52.1, 52.9, 53.1, 53.4, 53.8, 54.5, 54.8, 55.3, 55.5, 57.3, 57.6, 57.8, 58.6, 58.9, 59.4, 60.3, 60.7, 60.8, 61.4, 61.7, 61.8, 62.6, 62.9, 63.4, 63.5, 63.7, 64.2, 64.2, 66, 66.7, 66.7, 67.0, 67.0, 67.4, 68.3, 68.4, 69.1, 69.1, 69.4, 69.6, 70.0, 70.4, 70.7, 71.9, 72.1, 73.1, 74.5, 74.5, 74.7, 75.1, 75.3, 75.6, 75.7, 76.1, 76.6, 77.8, 78, 78.7, 79.7, 80.3, 80.4, 80.5, 81.0, 81.9, 82.0, 83.2, 84.1, 84.2, 85.0, 85.4, 85.8, 85.8, 88.4, 88.8, 88.8, 91.5, 97.03"/>
-  <button onclick="parseScores()">Plot Scores</button>
+  <button id="plotBtn">Plot Scores</button>
 
   <div id="mainControls" style="display: none;">
   <div class="percentages">
     <h2>Assign Boundaries by Percentages (Optional)</h2>
     <p>Enter percentages (e.g. 20, 30, 25, 25):</p>
     <input type="text" id="percentInput" placeholder="e.g. 20, 30, 25, 25" size="40" />
-    <button onclick="applyPercentBoundaries()">Set Boundaries</button>
+    <button id="applyPercentBoundariesBtn">Set Boundaries</button>
   </div>
 
   <div class="grades">
@@ -106,9 +106,9 @@ author_profile: false
   <div class="boundary-control">
     <h2>Adjust Boundaries</h2>
     <div id="sliders"></div>
-    <button onclick="addBoundary()">Add Boundary</button>
-    <button onclick="exportBoundaries()">Export Grade Bands</button>
-    <button onclick="exportGradesPerStudent()">Export Student Grades</button>
+    <button id="addBoundaryBtn">Add Boundary</button>
+    <button id="exportBoundariesBtn">Export Grade Bands</button>
+    <button id="exportGradesPerStudentBtn">Export Student Grades</button>
   </div>
 
   <div class="grade-bands">
@@ -119,6 +119,14 @@ author_profile: false
   </div>
   
   <script data-cfasync="false">
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("plotBtn").addEventListener("click", parseScores);
+      document.getElementById("applyPercentBoundariesBtn").addEventListener("click", applyPercentBoundaries);
+      document.getElementById("addBoundaryBtn").addEventListener("click", addBoundary);
+      document.getElementById("exportBoundariesBtn").addEventListener("click", exportBoundaries);
+      document.getElementById("exportGradesPerStudentBtn").addEventListener("click", exportGradesPerStudent);
+    });
+
     let scores = [];
     let boundaries = [50];
 
