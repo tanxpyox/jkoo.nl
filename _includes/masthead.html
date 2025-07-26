@@ -6,8 +6,7 @@
 {% if part_count > 1 %}
   {% assign parent_parts = clean_parts | slice: 0, part_count %}
   {% assign joined_parent = parent_parts | join: '/' %}
-  {% assign parent_path = '/' | append: joined_parent %}
-  {% assign parent_path = base_path | append: parent_path %}
+  {% assign parent_path = base_path | append: joined_parent %}
 {% else %}
   {% assign parent_path = base_path %}
 {% endif %}
