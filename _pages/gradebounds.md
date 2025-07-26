@@ -118,7 +118,7 @@ author_profile: false
   </div>
   </div>
   
-  <script>
+  <script data-cfasync="false">
     let scores = [];
     let boundaries = [50];
 
