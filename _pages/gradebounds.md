@@ -118,7 +118,7 @@ author_profile: false
   </div>
   </div>
   
-  <script data-cfasync="false">
+  <script type="text/javascript" data-cfasync="false">
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("plotBtn").addEventListener("click", parseScores);
       document.getElementById("applyPercentBoundariesBtn").addEventListener("click", applyPercentBoundaries);
