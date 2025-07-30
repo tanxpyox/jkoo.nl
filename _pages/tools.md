@@ -5,7 +5,7 @@ permalink: /tools
 author_profile: true
 ---
 
-Here are some tools I've developed over the years to make my life easier. Most of them were vibe-coded after a glass (or two) of wine - so forgive any bugs that slipped through.
+Here are some tools I've developed over the years to make my life easier. Most of them were written after a glass (or two) of wine - so forgive any bugs that slipped through.
 
 ## Teaching
 
