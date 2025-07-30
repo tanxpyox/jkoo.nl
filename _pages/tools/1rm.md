@@ -50,43 +50,7 @@ author_profile: false
       font-weight: 600;
     }
     input[type="range"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 100%;
-      height: 6px;
-      background: #ddd;
-      border-radius: 3px;
-      outline: none;
-      transition: background 0.2s;
-    }
-    input[type="range"]:hover {
-      background: #ccc;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 14px;
-      height: 14px;
-      background: #111827;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    input[type="range"]:active::-webkit-slider-thumb {
-      transform: scale(1.3);
-      background: #374151;
-    }
-    input[type="range"]::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      background: #111827;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    input[type="range"]:active::-moz-range-thumb {
-      transform: scale(1.3);
-      background: #374151;
+      flex: 1;
     }
   </style>
 </head>
