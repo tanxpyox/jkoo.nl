@@ -1,6 +1,8 @@
 {% include base_path %}
 {% assign url_parts = page.url | split: '/' %}
 {% assign clean_parts = url_parts | reject: '' %}
+{% assign last_part = clean_parts | last %}
+{% assign short_path = "/.../" | append: last_part %}
 {% assign part_count = clean_parts | size | minus: 1 %}
 
 {% if part_count > 1 %}
@@ -9,6 +11,7 @@
   {% assign parent_path = base_path | append: joined_parent %}
 {% else %}
   {% assign parent_path = base_path %}
+  {% assign short_path = page.url %}
 {% endif %}
 
 <div class="masthead">
@@ -19,7 +22,10 @@
         <div class="xlogo">
           <span class="xlogo__mark">&gt;</span>
           <a href="{{ base_path }}"><span class="xlogo__text">jkoo.nl</span></a>
-          <a href="{{ parent_path }}"><span class="xlogo__subtext">{{ page.url }}</span></a>
+          <a href="{{ parent_path }}">
+            <span class="xlogo__subtext xlogo__subtext--full">{{ page.url }}</span>
+            <span class="xlogo__subtext xlogo__subtext--short">{{ short_path }}</span>
+          </a>
           <span class="xlogo__cursor"></span>
         </div>
     </li>
