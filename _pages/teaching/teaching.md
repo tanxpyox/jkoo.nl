@@ -15,6 +15,3 @@ GOV 50: Data Science for the Social Sciences (Teaching Fellow, Fall 2025, with [
 
 POLI 2104: Research Methods in Politics and Public Administration (Teaching Assistant, Fall 2021, Fall 2022, with [Kai Quek](https://ppaweb.hku.hk/f/quek))
 
-
-
-
