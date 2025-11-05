@@ -10,6 +10,7 @@ Here is a list of courses that I have taught or co-taught in the past:
 ## Harvard University
 
 GOV 50: Data Science for the Social Sciences (Teaching Fellow, Fall 2025, with [Scott Cunningham](https://www.scunning.com/))
+
 GOV 97: The Politics of War (Instructor of Record, Spring 2026)
 
 ## The University of Hong Kong
