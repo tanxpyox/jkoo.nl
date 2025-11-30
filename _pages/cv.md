@@ -4,9 +4,7 @@ title: "Curriculum Vitæ"
 permalink: /cv
 author_profile: true
 redirect_from:
-  - /resume/
   - /resume
-  - /cv/
 ---
 
 {% include base_path %}
@@ -15,5 +13,4 @@ redirect_from:
     #myFrame { width:100%; height:100vh; }
 </style>
 
-<iframe src="https://drive.google.com/file/d/1-JzLjbUsfyd_uKX-ev3Bmc71Jnus5BGs/preview" id="myFrame">
-</iframe>
+<object data="/assets/cv.pdf" width="1000" height="1000" type='application/pdf'></object>
