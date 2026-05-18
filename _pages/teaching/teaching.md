@@ -5,13 +5,18 @@ permalink: /teaching
 author_profile: true
 ---
 
-Here is a list of courses that I have taught or co-taught in the past:
+Here is a list of courses that I have taught or co-taught:
 
 ## Harvard University
 
-GOV 50: Data Science for the Social Sciences (Teaching Fellow, Fall 2025, with [Scott Cunningham](https://www.scunning.com/))
+Government 50: Data Science for the Social Sciences (Fall 2025, Teaching Fellow, with [Scott Cunningham](https://www.scunning.com/))
 
-GOV 97: The Politics of War (Instructor of Record, Spring 2026)
+Government 97: The Politics of War (Spring 2026, Instructor)
+
+Government 1740 International Law and Institutions (Fall 2026, Teaching Fellow, with [Christoph Mikulaschek](https://christophmikulaschek.com/))
+
+Government 1742: Psychology of International Relations (Spring 2027, Teaching Fellow, with [Joshua Kertzer](https://jkertzer.sites.fas.harvard.edu/))
+
 
 ## The University of Hong Kong
 
