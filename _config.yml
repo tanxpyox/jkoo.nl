@@ -22,6 +22,7 @@ repository               : #"academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.jpg"
+  avatar_credit    : "Photo Credits: Minda de Gunzberg Center for European Studies, Harvard University" # Shown as a hover tooltip on the sidebar avatar. Leave blank to hide it.
   name             : "John NL Koo"
   pronouns         : # example: "she/her"  
   bio              : "PhD Candidate in Government<br>Harvard University"

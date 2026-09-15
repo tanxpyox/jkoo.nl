@@ -7,11 +7,13 @@
 <div itemscope itemtype="http://schema.org/Person">
 
   <div class="author__avatar">
+    {% if author.avatar_credit %}<span class="author__avatar-wrap" tabindex="0" data-credit="{{ author.avatar_credit | escape }}" aria-label="{{ author.avatar_credit | escape }}">{% endif %}
     {% if author.avatar contains "://" %}
     	<img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
     	<img src="{{ author.avatar | prepend: "/images/" }}" class="author__avatar" alt="{{ author.name }}">
     {% endif %}
+    {% if author.avatar_credit %}</span>{% endif %}
   </div>
 
   <div class="author__content">
