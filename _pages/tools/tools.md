@@ -11,7 +11,7 @@ Here are some tools I've developed over the years to make my life easier. Most o
 
 [Grade Boundary Calculator](/tools/gradebounds): Finds the optimal grade boundaries based on student scores. Great for teachers who want the hard decisions made for them.
 
-## Productivity 
+## Productivity
 
 [Pomodoro Timer and Task List](/tools/pomodoro): Remind yourself to be stop being productive every 25 minutes.
 
